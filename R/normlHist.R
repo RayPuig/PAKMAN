@@ -5,12 +5,7 @@
 #' @param dens valor lògic: TRUE=Superposar estimador de nucli de la densitat
 #' @param ... altres funcions
 #' @return histograma amb la densitat normal superposada
-#' @importFrom stats sd
-#' @importFrom stats dnorm
-#' @importFrom stats density
-#' @importFrom graphics  hist
-#' @importFrom graphics  lines
-#' @export normalHist
+#' @export
 #' @examples
 #' u=rnorm(1000,100,12)
 #' normalHist(u);
@@ -18,14 +13,16 @@
 #' normalHist(u,dens=TRUE,col="lightcyan")
 #'
 normalHist<-function(x,dens=FALSE,...){
+
+
   m=mean(x)
-  stdev=sd(x)
+  stdev=stats::sd(x)
   xn=seq(min(x),max(x),length=200)
 
-  yn=dnorm(xn,m,stdev)
+  yn=stats::dnorm(xn,m,stdev)
   maxy=1.1*max(yn)
 
-  hist(x, ylim=c(0,maxy),freq=FALSE,...)
-  lines(xn,yn,col="red",lwd=2)
-  if (dens) lines(density(x),col="blue",lty=2,lwd=2)
+  graphics::hist(x, ylim=c(0,maxy),freq=FALSE,...)
+  graphics::lines(xn,yn,col="red",lwd=2)
+  if (dens) graphics::lines(stats::density(x),col="blue",lty=2,lwd=2)
 }

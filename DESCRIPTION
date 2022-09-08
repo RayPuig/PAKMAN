@@ -1,12 +1,11 @@
 Package: PAKMAN
 Type: Package
-Title: What the Package Does (Title Case)
+Title: PAKMAN NORMAL
 Version: 0.1.0
-Date: 2022-09-06
-Author: Ray Puig i Jordi Real
+Date: 2022-09-07
+Author: Ray Puig 
 Maintainer: Ray Puig <raypuig@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Dibuixa histograma d'una variable superposant-ne la densitat normal ajustada.
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
